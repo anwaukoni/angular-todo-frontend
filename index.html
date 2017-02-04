@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- Polyfills -->
+  <script src="bower_components/webcomponentsjs/webcomponents.min.js"></script>
+  <script src="node_modules/core-js/client/shim.min.js"></script>
+
+  <script>
+     window.Polymer = {
+       dom: 'shadow'
+     };
+   </script>
+
+   <!-- JavaScript libraries -->
+   <!-- <script src="node_modules/zone.js/dist/zone.js"></script>
+   <script src="node_modules/reflect-metadata/Reflect.js"></script>
+   <script src="node_modules/systemjs/dist/system.src.js"></script> -->
+
+   <!-- Styles -->
+     <link rel="import" href="bower_components/iron-flex-layout/iron-flex-layout.html">
+     <link rel="import" href="bower_components/paper-styles/color.html">
+     <link rel="import" href="bower_components/paper-styles/default-theme.html">
+     <link rel="import" href="bower_components/paper-styles/typography.html">
+     <link rel="import" href="bower_components/paper-styles/shadow.html">
+     <style is="custom-style">
+       body {
+         @apply(--layout-fullbleed);
+         @apply(--paper-font-body1);
+         background: var(--primary-background-color);
+         color: var(--primary-text-color);
+       }
+     </style>
+
+     <!-- Polymer Elements -->
+      <link rel="import" href="bower_components/iron-icons/iron-icons.html">
+      <link rel="import" href="bower_components/app-layout/app-layout.html">
+      <link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html">
+      <link rel="import" href="bower_components/paper-input/paper-input.html">
+      <link rel="import" href="bower_components/vaadin-grid/vaadin-grid.html">
+      <link rel="import" href="bower_components/vaadin-date-picker/vaadin-date-picker.html">
+
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/slate/bootstrap.min.css">
+  <title>Todo App</title>
+  <!-- bring in js devDependencies-->
+  <script src="node_modules/core-js/client/shim.min.js"></script>
+  <script src="node_modules/zone.js/dist/zone.js"></script>
+  <script src="node_modules/reflect-metadata/Reflect.js"></script>
+
+  <!-- bring in systemjs -->
+  <script src="node_modules/systemjs/dist/system.src.js"></script>
+  <script src="systemjs.config.js"></script>
+  <script>
+    document.addEventListener('WebComponentsReady', function(){
+      System.import('app').catch(function(err){console.error(err); });
+    });
+  </script>
+  <style>body{padding: 50px 0; }</style>
+</head>
+<body class="container">
+
+    <my-app></my-app>
+
+</body>
+</html>
