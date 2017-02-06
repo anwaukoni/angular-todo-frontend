@@ -13,6 +13,7 @@ constructor(private http:Http){}
 												return this.http.get('http://localhost:8080/task');
 				}
 				deleteTask(id: String){
+												console.log('http://localhost:8080/task/'+ id);
 												return this.http.delete('http://localhost:8080/task/'+ id);
 				}
 				updateTask(id: String, task: Task){
