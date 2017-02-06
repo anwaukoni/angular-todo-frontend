@@ -8,6 +8,9 @@ constructor(private http:Http){}
 getTasks(){
         return this.http.get('http://localhost:8080/tasks');
 }
+deleteTask(){
+        return this.http.get('http://localhost:8080/tasks');
+}
 
     // TaskService.get('http://localhost:8080/')
     // .post('/task')
