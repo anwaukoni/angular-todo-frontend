@@ -27,12 +27,11 @@ ngOnInit (){
       
   addTask(task: string){
     const newTask : Task = new Task(task);
-    console.log(task);
+    console.log(newTask);
     if(task){
-      this.lists.push(newTask);
-    }
-    console.log(this.lists);
+     this.lists.push(newTask);
   }
+}
 
   deleteTask(index:number){
     this.lists.splice(index,1);

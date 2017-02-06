@@ -8,9 +8,12 @@
    <div>My application content</div>
  </app-header-layout>
 -->
-    <style>
-        header {padding : 0 20px 0}
-    .jumbotron{box-shadow : 0 5px 0 rgba(230, 230, 230, 0.6); }
+  <style is="custom-style">
+    header {padding : 0 20px 0}
+    .jumbotron{
+      box-shadow : 0 5px 0 rgba(230, 230, 230, 0.6); 
+      background: #a9a9a9;
+      }
     .todoListNav{margin:0 0 0 0;}
     .invisible{opacity:0;}
     app-toolbar {
@@ -43,7 +46,7 @@
       </div>
     <div class="jumbotron col-sm-9">
       <div >
-      <paper-input #task type="text"  class="text-center col-sm-12" style="color: white; background-color:transparent; border-width:0 0 1px 0; padding: 0.5em; margin-bottom:15px;" label="New Task"></paper-input>
+      <paper-input #task type="text"  class="text-center col-sm-12 myclass" style="border-width:0 0 1px 0; padding: 0.5em; margin-bottom:15px;" label="New Task" alwaysFloatLabel></paper-input>
       <button (click)="addTask(task.value)" class="text-center btn btn-success" style="padding-right:5em; padding-left:5em; ">Add</button>
         <!--form class="form" (submit)=addTask(Task.value);>
             <textarea class="col-sm-12" placeholder="Say more about your task" style="background-color:transparent; border-width:0 0 1px 0; padding: 0.5em; background-color:rgba(230,230, 230, 0.2); color[placeholder]:white; margin-bottom:1em;">
