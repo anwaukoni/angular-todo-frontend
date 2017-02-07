@@ -14,8 +14,21 @@ var TaskService = (function () {
     function TaskService(http) {
         this.http = http;
     }
+    TaskService.prototype.getOne = function (_id) {
+        return this.http.get('http://localhost:8080/task/' + _id);
+    };
     TaskService.prototype.getTasks = function () {
-        return this.http.get('http://localhost:8080/tasks');
+        return this.http.get('http://localhost:8080/task');
+    };
+    TaskService.prototype.deleteTask = function (_id) {
+        console.log('http://localhost:8080/task/' + _id);
+        return this.http.delete('http://localhost:8080/task/' + _id);
+    };
+    TaskService.prototype.updateTask = function (_id, task) {
+        return this.http.put('http://localhost:8080/task/' + _id, task);
+    };
+    TaskService.prototype.postTask = function (task) {
+        return this.http.post('http://localhost:8080/task/', task);
     };
     return TaskService;
 }());
