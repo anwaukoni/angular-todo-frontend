@@ -40,6 +40,12 @@ var AppComponent = (function () {
         }
         console.log(this.lists);
     };
+    AppComponent.prototype.keyboardInput = function (event) {
+        if (event.which === 13) {
+            this.addTask(event.srcElement.value);
+            event.srcElement.value = '';
+        }
+    };
     AppComponent.prototype.deleteTask = function (index) {
         this.taskService.deleteTask(this.lists[index]._id).subscribe(function (res) { });
         this.lists.splice(index, 1);
@@ -71,6 +77,12 @@ var AppComponent = (function () {
     };
     return AppComponent;
 }());
+__decorate([
+    core_1.HostListener('window:keydown', ['$event']),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", void 0)
+], AppComponent.prototype, "keyboardInput", null);
 AppComponent = __decorate([
     core_1.Component({
         selector: "my-app",

@@ -39,6 +39,7 @@
             <span *ngIf="!list.showBox" (click)="getOne(i)">{{list.title}}</span>
             <span *ngIf="list.showBox">.</span>
             <div *ngIf="list.showBox" style="position:absolute; left:0px; bottom:8px; ">
+
             <input  type="text" [(ngModel)]="list.title" style="max-width:90%; margin-left:0.3em; width:108%; z-index:9999 !important;"/>
 
             </div>

@@ -18,7 +18,10 @@ var AppModule = (function () {
 }());
 AppModule = __decorate([
     core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, http_1.HttpModule],
+        imports: [platform_browser_1.BrowserModule,
+            forms_1.FormsModule,
+            http_1.HttpModule
+        ],
         declarations: [app_component_1.AppComponent,
             angular2_polymer_1.PolymerElement('app-header-layout'),
             angular2_polymer_1.PolymerElement('app-header'),

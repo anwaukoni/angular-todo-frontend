@@ -1,4 +1,4 @@
-import {Component, OnInit} from "@angular/core";
+import {Component, OnInit, HostListener} from "@angular/core";
 import {TaskService} from "./task.service";
 import {Task} from "./task";
 
@@ -13,6 +13,7 @@ import {Task} from "./task";
 export class AppComponent implements OnInit{
   constructor(private taskService:TaskService){}
   lists: Task[];
+  which: number;
 ngOnInit (){
 
         this.taskService.getTasks()
@@ -39,6 +40,18 @@ ngOnInit (){
     }
     console.log(this.lists);
   }
+
+  @HostListener('window:keydown', ['$event'])
+  keyboardInput(event: any) {
+
+    if (event.which === 13) {
+      this.addTask(event.srcElement.value);
+      event.srcElement.value = '';  
+    }
+
+  }
+
+
 
   deleteTask(index:number){
     this.taskService.deleteTask(this.lists[index]._id).subscribe((res) => {});
