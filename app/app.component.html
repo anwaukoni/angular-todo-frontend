@@ -1,13 +1,3 @@
-<!--
-  <app-header-layout has-scrolling-region>
-   <app-header fixed>
-     <app-toolbar>
-       <div title spacer>All heroes</div>
-     </app-toolbar>
-   </app-header>
-   <div>My application content</div>
- </app-header-layout>
--->
   <style is="custom-style">
     header {padding : 0 20px 0}
     .jumbotron{
@@ -55,13 +45,6 @@
       <form >
       <paper-input #task type="text"  class="text-center col-sm-12" id="add_form" style="border-width:0 0 1px 0; padding: 0.5em; margin-bottom:15px;" label="New Task" alwaysFloatLabel></paper-input>
       <input (click)="addTask(task.value)" class="text-center btn btn-success" style="padding-right:5em; padding-left:5em;" type="submit" value="  Add  " />
-        <!--form class="form" (submit)=addTask(Task.value);>
-            <textarea class="col-sm-12" placeholder="Say more about your task" style="background-color:transparent; border-width:0 0 1px 0; padding: 0.5em; background-color:rgba(230,230, 230, 0.2); color[placeholder]:white; margin-bottom:1em;">
-            </textarea>
-            <div class="col-sm-12 text-center">
-              <input type="submit" class="text-center btn btn-success" style="padding-right:5em; padding-left:5em; "/>
-            </div>
-        </form-->
       </form>
 
     </div>
