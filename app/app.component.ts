@@ -42,11 +42,22 @@ ngOnInit (){
   }
 
   @HostListener('window:keydown', ['$event'])
-  keyboardInput(event: any) {
+  keyboardInput(event: any){
+
+     let newTaskStr: string = event.srcElement.value;
+     let editFormClass = event.srcElement.class;
+
 
     if (event.which === 13) {
-      this.addTask(event.srcElement.value);
-      event.srcElement.value = '';  
+      if(event.srcElement.id === 'add_form'){
+        this.addTask(newTaskStr);
+      }else if(event.srcElement.id === 'edit_form'){
+        // let index: number = parseInt(editFormClass.match(/\d+/));
+        console.log(newTaskStr, editFormClass);
+        // this.updateTask(newTaskStr, index);
+      }
+      console.log(event.srcElement);
+      event.srcElement.value = '';
     }
 
   }
@@ -80,7 +91,6 @@ ngOnInit (){
   }
 
   updateTask (task: string, index: number){
-      console.log(task, index);
       const newTask : Task = new Task(task);
         this.lists[index].title = newTask.title;
         console.log(newTask.title);

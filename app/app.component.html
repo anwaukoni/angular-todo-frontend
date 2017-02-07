@@ -40,7 +40,7 @@
             <span *ngIf="list.showBox">.</span>
             <div *ngIf="list.showBox" style="position:absolute; left:0px; bottom:8px; ">
 
-            <input  type="text" [(ngModel)]="list.title" style="max-width:90%; margin-left:0.3em; width:108%; z-index:9999 !important;"/>
+            <input  type="text" [(ngModel)]="list.title" id=edit_form class={{i}} style="max-width:90%; margin-left:0.3em; width:108%; z-index:9999 !important;"/>
 
             </div>
             <span (click)= "deleteTask(i)" class="glyphicon glyphicon-trash" style="float:right "> </span>
@@ -53,7 +53,7 @@
       </div>
     <div class="jumbotron col-xs-12 col-md-9">
       <form >
-      <paper-input #task type="text"  class="text-center col-sm-12 myclass" style="border-width:0 0 1px 0; padding: 0.5em; margin-bottom:15px;" label="New Task" alwaysFloatLabel></paper-input>
+      <paper-input #task type="text"  class="text-center col-sm-12" id="add_form" style="border-width:0 0 1px 0; padding: 0.5em; margin-bottom:15px;" label="New Task" alwaysFloatLabel></paper-input>
       <input (click)="addTask(task.value)" class="text-center btn btn-success" style="padding-right:5em; padding-left:5em;" type="submit" value="  Add  " />
         <!--form class="form" (submit)=addTask(Task.value);>
             <textarea class="col-sm-12" placeholder="Say more about your task" style="background-color:transparent; border-width:0 0 1px 0; padding: 0.5em; background-color:rgba(230,230, 230, 0.2); color[placeholder]:white; margin-bottom:1em;">
