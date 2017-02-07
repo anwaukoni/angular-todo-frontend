@@ -43,18 +43,18 @@ ngOnInit (){
 
   @HostListener('window:keydown', ['$event'])
   keyboardInput(event: any){
-
+    console.log(Number.isInteger(parseInt(event.srcElement.id)));
      let newTaskStr: string = event.srcElement.value;
-     let editFormClass = event.srcElement.class;
-
-
     if (event.which === 13) {
       if(event.srcElement.id === 'add_form'){
         this.addTask(newTaskStr);
-      }else if(event.srcElement.id === 'edit_form'){
+
+      }else if(Number.isInteger(parseInt(event.srcElement.id))){
+         let index = parseInt(event.srcElement.id);
         // let index: number = parseInt(editFormClass.match(/\d+/));
-        console.log(newTaskStr, editFormClass);
-        // this.updateTask(newTaskStr, index);
+        console.log(newTaskStr, index);
+        this.updateTask(newTaskStr, index);
+        this.lists[index].showBox = false;
       }
       console.log(event.srcElement);
       event.srcElement.value = '';

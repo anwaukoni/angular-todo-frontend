@@ -40,7 +40,7 @@
             <span *ngIf="list.showBox">.</span>
             <div *ngIf="list.showBox" style="position:absolute; left:0px; bottom:8px; ">
 
-            <input  type="text" [(ngModel)]="list.title" id=edit_form class={{i}} style="max-width:90%; margin-left:0.3em; width:108%; z-index:9999 !important;"/>
+            <input  type="text" [(ngModel)]="list.title" id={{i}} style="max-width:90%; margin-left:0.3em; width:108%; z-index:9999 !important;"/>
 
             </div>
             <span (click)= "deleteTask(i)" class="glyphicon glyphicon-trash" style="float:right "> </span>
